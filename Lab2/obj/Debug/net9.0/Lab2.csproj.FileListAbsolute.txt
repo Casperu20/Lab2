@@ -1,0 +1,14 @@
+/home/student/RiderProjects/Lab2/Lab2/obj/Debug/net9.0/Lab2.GeneratedMSBuildEditorConfig.editorconfig
+/home/student/RiderProjects/Lab2/Lab2/obj/Debug/net9.0/Lab2.AssemblyInfoInputs.cache
+/home/student/RiderProjects/Lab2/Lab2/obj/Debug/net9.0/Lab2.AssemblyInfo.cs
+/home/student/RiderProjects/Lab2/Lab2/obj/Debug/net9.0/Lab2.csproj.CoreCompileInputs.cache
+/home/student/RiderProjects/Lab2/Lab2/bin/Debug/net9.0/Lab2
+/home/student/RiderProjects/Lab2/Lab2/bin/Debug/net9.0/Lab2.deps.json
+/home/student/RiderProjects/Lab2/Lab2/bin/Debug/net9.0/Lab2.runtimeconfig.json
+/home/student/RiderProjects/Lab2/Lab2/bin/Debug/net9.0/Lab2.dll
+/home/student/RiderProjects/Lab2/Lab2/bin/Debug/net9.0/Lab2.pdb
+/home/student/RiderProjects/Lab2/Lab2/obj/Debug/net9.0/Lab2.dll
+/home/student/RiderProjects/Lab2/Lab2/obj/Debug/net9.0/refint/Lab2.dll
+/home/student/RiderProjects/Lab2/Lab2/obj/Debug/net9.0/Lab2.pdb
+/home/student/RiderProjects/Lab2/Lab2/obj/Debug/net9.0/Lab2.genruntimeconfig.cache
+/home/student/RiderProjects/Lab2/Lab2/obj/Debug/net9.0/ref/Lab2.dll
