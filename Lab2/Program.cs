@@ -21,7 +21,7 @@ Console.WriteLine($"Stat: {stat} - Value: {value}\n");
 Simulator.SimulateAttack(ref myCharizard, ref myPokemon);
 Simulator.SimulateAttack(ref myPokemon, ref myCharizard);
 
-double average_attack = Simulator.CalculateAverageStat("attack", myPokemon);
+double average_attack = Simulator.CalculateAverageStat("attack", myPokemon, myCharizard);
 Console.WriteLine($"\nAverage attack is: {average_attack}");
 
 
