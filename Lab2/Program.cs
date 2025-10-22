@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using Lab2;
 
-var Pokemon = PokemonUtils.GetPokemonDataAsync("Pikachu").Result;
+var Pokemon = PokemonUtils.GetPokemonDataAsync("pikachu").Result;
 Pokemon myPokemon = JsonSerializer.Deserialize<Pokemon>(Pokemon); // StandardPokemon
 
 var charizard = PokemonUtils.GetPokemonDataAsync("mewtwo").Result;
@@ -57,23 +57,23 @@ else
     };
 }
 
-BasePokemon mew;
+BasePokemon mewtwo;
 
 if (mewtwoSpecies != null && (mewtwoSpecies.IsLegendary || mewtwoSpecies.IsMythical))
 {
-    mew = new LegendaryPokemon
+    mewtwo = new LegendaryPokemon
     {
-        Id = myPokemon.id,
-        Name = myPokemon.name,
-        Weight = myPokemon.weight,
-        Height = myPokemon.height,
-        BaseExperience = myPokemon.base_experience,
+        Id = myCharizard.id,
+        Name = myCharizard.name,
+        Weight = myCharizard.weight,
+        Height = myCharizard.height,
+        BaseExperience = myCharizard.base_experience,
         SpecialType = "CRAZY_PIKA"
     };
 }
 else
 {
-    mew = new StandardPokemon
+    mewtwo = new StandardPokemon
     {
         Id = myCharizard.id,
         Name = myCharizard.name,
@@ -83,11 +83,11 @@ else
     };
 }
 
-List<BasePokemon> pokemons = new List<BasePokemon>();
-pokemons.Add(pika);
-pokemons.Add(mew);
+List<BasePokemon> pokedex = new List<BasePokemon>();
+pokedex.Add(pika);
+pokedex.Add(mewtwo);
 
-foreach (var pokemon in pokemons)
+foreach (var pokemon in pokedex)
 {
     pokemon.DisplayInfo();
 }

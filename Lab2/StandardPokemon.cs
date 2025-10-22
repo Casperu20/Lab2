@@ -8,6 +8,6 @@ public class StandardPokemon : BasePokemon {
         Console.WriteLine("Weight: {0}", Weight);
         Console.WriteLine("Base Experience: {0}", BaseExperience);
         
-        Console.WriteLine(" ---- Pokemon Stats END ---- ");
+        Console.WriteLine(" ---- Pokemon Stats END ---- \n");
     }
 }
