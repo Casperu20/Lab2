@@ -2,15 +2,16 @@
 using Lab2;
 
 var Pokemon = PokemonUtils.GetPokemonDataAsync("Pikachu").Result;
-Pokemon myPokemon = JsonSerializer.Deserialize<Pokemon>(Pokemon);
+Pokemon myPokemon = JsonSerializer.Deserialize<Pokemon>(Pokemon); // StandardPokemon
 
-var charizard = PokemonUtils.GetPokemonDataAsync("charizard").Result;
+var charizard = PokemonUtils.GetPokemonDataAsync("mewtwo").Result;
 Pokemon myCharizard = JsonSerializer.Deserialize<Pokemon>(charizard);
 
 // Console.WriteLine(myPokemon.name);
 // Console.WriteLine("weight is: " + myPokemon.weight);
 // Console.WriteLine(myPokemon.held_items);
 
+/*
 BattleSimulator Simulator = new BattleSimulator();
 string stat = "";
 int value = 0;
@@ -23,5 +24,70 @@ Simulator.SimulateAttack(ref myPokemon, ref myCharizard);
 
 double average_attack = Simulator.CalculateAverageStat("attack", myPokemon, myCharizard);
 Console.WriteLine($"\nAverage attack is: {average_attack}");
+*/
+// LAB 4 PART
 
+Console.WriteLine($"\n ---- Pokemon Evolution ---- ");
 
+var pikachuSpecies = PokemonSpeciesHelper.GetSpeciesDataAsync(myPokemon.species.url).Result;
+var mewtwoSpecies = PokemonSpeciesHelper.GetSpeciesDataAsync(myCharizard.species.url).Result;
+
+BasePokemon pika;
+
+if (pikachuSpecies != null && (pikachuSpecies.IsLegendary || pikachuSpecies.IsMythical))
+{
+    pika = new LegendaryPokemon
+    {
+        Id = myPokemon.id,
+        Name = myPokemon.name,
+        Weight = myPokemon.weight,
+        Height = myPokemon.height,
+        BaseExperience = myPokemon.base_experience
+    };
+}
+else
+{
+    pika = new StandardPokemon
+    {
+        Id = myPokemon.id,
+        Name = myPokemon.name,
+        Weight = myPokemon.weight,
+        Height = myPokemon.height,
+        BaseExperience = myPokemon.base_experience
+    };
+}
+
+BasePokemon mew;
+
+if (mewtwoSpecies != null && (mewtwoSpecies.IsLegendary || mewtwoSpecies.IsMythical))
+{
+    mew = new LegendaryPokemon
+    {
+        Id = myPokemon.id,
+        Name = myPokemon.name,
+        Weight = myPokemon.weight,
+        Height = myPokemon.height,
+        BaseExperience = myPokemon.base_experience,
+        SpecialType = "CRAZY_PIKA"
+    };
+}
+else
+{
+    mew = new StandardPokemon
+    {
+        Id = myCharizard.id,
+        Name = myCharizard.name,
+        Weight = myCharizard.weight,
+        Height = myCharizard.height,
+        BaseExperience = myCharizard.base_experience,
+    };
+}
+
+List<BasePokemon> pokemons = new List<BasePokemon>();
+pokemons.Add(pika);
+pokemons.Add(mew);
+
+foreach (var pokemon in pokemons)
+{
+    pokemon.DisplayInfo();
+}
