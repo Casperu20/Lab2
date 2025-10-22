@@ -11,7 +11,8 @@ Pokemon myCharizard = JsonSerializer.Deserialize<Pokemon>(charizard);
 // Console.WriteLine("weight is: " + myPokemon.weight);
 // Console.WriteLine(myPokemon.held_items);
 
-/*
+Console.WriteLine(" --- BATTLE SIMULATION --- \n");
+
 BattleSimulator Simulator = new BattleSimulator();
 string stat = "";
 int value = 0;
@@ -24,7 +25,9 @@ Simulator.SimulateAttack(ref myPokemon, ref myCharizard);
 
 double average_attack = Simulator.CalculateAverageStat("attack", myPokemon, myCharizard);
 Console.WriteLine($"\nAverage attack is: {average_attack}");
-*/
+
+Console.WriteLine(" --- BATTLE END --- \n");
+
 // LAB 4 PART
 
 Console.WriteLine($"\n ---- Pokemon Evolution ---- ");
